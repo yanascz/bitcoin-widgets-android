@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/configuration_host"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/configuration_host_hint"
+        android:importantForAutofill="no"
+        android:inputType="textUri" />
+
+    <EditText
+        android:id="@+id/configuration_port"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/configuration_port_hint"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:text="@string/configuration_port_default" />
+
+    <Button
+        android:id="@+id/configuration_confirm_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/configuration_confirm_button_text" />
+
+</LinearLayout>

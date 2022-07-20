@@ -1,0 +1,9 @@
+package cz.yanas.bitcoin.widgets
+
+data class MempoolStatus(
+    val blockHeight: Int,
+    val fastestFee: Int,
+    val halfHourFee: Int,
+    val hourFee: Int,
+    val minimumFee : Int
+)

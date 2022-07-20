@@ -1,0 +1,30 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BitcoinWidgets.Widget"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        style="@style/BitcoinWidgets.Widget.Bitcoin"
+        android:contentDescription="@string/bitcoin_description" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <include
+            layout="@layout/node_status_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="11dp" />
+
+        <include
+            layout="@layout/mempool_status_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="11dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|end"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/node_status_block_height"
+        style="@style/BitcoinWidgets.Widget.BlockHeight"
+        android:text="@string/block_height"
+        android:textColor="@color/orange" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/node_status_user_agent"
+            style="@style/BitcoinWidgets.Widget.FootNote"
+            android:text="@string/node_status_user_agent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/BitcoinWidgets.Widget.FootNote"
+                android:text="("
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/node_status_protocol_version"
+                style="@style/BitcoinWidgets.Widget.FootNote"
+                android:text="@string/node_status_protocol_version" />
+
+            <TextView
+                style="@style/BitcoinWidgets.Widget.FootNote"
+                android:text=")"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

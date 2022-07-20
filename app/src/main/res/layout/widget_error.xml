@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BitcoinWidgets.Widget"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        style="@style/BitcoinWidgets.Widget.Bitcoin"
+        android:contentDescription="@string/bitcoin_description" />
+
+    <TextView
+        style="@style/BitcoinWidgets.Widget.Error"
+        android:layout_gravity="center"
+        android:text="@string/node_unreachable" />
+
+</FrameLayout>

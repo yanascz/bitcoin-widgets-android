@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|end"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/mempool_status_block_height"
+        style="@style/BitcoinWidgets.Widget.BlockHeight"
+        android:text="@string/block_height"
+        android:textColor="@color/purple" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/mempool_status_hour_fee"
+                style="@style/BitcoinWidgets.Widget.Fee"
+                android:text="@string/mempool_status_hour_fee" />
+
+            <TextView
+                style="@style/BitcoinWidgets.Widget.FootNote"
+                android:layout_marginHorizontal="7dp"
+                android:text="@string/mempool_status_fee_separator" />
+
+            <TextView
+                android:id="@+id/mempool_status_half_hour_fee"
+                style="@style/BitcoinWidgets.Widget.Fee"
+                android:text="@string/mempool_status_half_hour_fee" />
+
+            <TextView
+                style="@style/BitcoinWidgets.Widget.FootNote"
+                android:layout_marginHorizontal="7dp"
+                android:text="@string/mempool_status_fee_separator" />
+
+            <TextView
+                android:id="@+id/mempool_status_fastest_fee"
+                style="@style/BitcoinWidgets.Widget.Fee"
+                android:text="@string/mempool_status_fastest_fee" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/BitcoinWidgets.Widget.FootNote"
+                android:layout_marginEnd="7dp"
+                android:text="@string/mempool_status_minimum" />
+
+            <TextView
+                android:id="@+id/mempool_status_minimum_fee"
+                style="@style/BitcoinWidgets.Widget.Fee"
+                android:text="@string/mempool_status_minimum_fee" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+

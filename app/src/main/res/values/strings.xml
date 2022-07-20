@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bitcoin Widgets</string>
+    <string name="app_add_widget_title">Add a widget</string>
+    <string name="app_add_widget_item_1">On a Home screen, touch and hold an empty space.</string>
+    <string name="app_add_widget_item_2">Tap Widgets.</string>
+    <string name="app_add_widget_item_3">Touch and hold a desired widget. You’ll get images of your Home screens.</string>
+    <string name="app_add_widget_item_4">Slide the widget to where you want it. Lift your finger.</string>
+    <string name="app_add_widget_item_5">Configure the widget if a configuration dialog pops up.</string>
+    <string name="app_resize_widget_title">Resize a widget</string>
+    <string name="app_resize_widget_item_1">Touch and hold the widget on your Home screen.</string>
+    <string name="app_resize_widget_item_2">Lift your finger. If the widget can be resized, you\'ll find an outline with dots on the sides.</string>
+    <string name="app_resize_widget_item_3">To resize the widget, drag the dots.</string>
+    <string name="app_resize_widget_item_4">When you\'re done, tap outside the widget.</string>
+    <string name="app_find_out_more_title">Find out more</string>
+    <string name="app_find_out_more_code_icon">code</string>
+    <string name="app_find_out_more_source_code"><a href="https://github.com/yanascz/bitcoin-widgets-android">Source code</a></string>
+    <string name="app_find_out_more_bug_icon">bug</string>
+    <string name="app_find_out_more_issue_tracking"><a href="https://github.com/yanascz/bitcoin-widgets-android/issues">Issue tracking</a></string>
+    <string name="app_support_title">Support</string>
+    <string name="app_support_lightning_icon">lightning</string>
+    <string name="app_support_lightning_address"><a href="lightning:widgets@ln.yanas.cz">widgets@ln.yanas.cz</a></string>
+    <string name="node_status_widget_label">Node Status</string>
+    <string name="node_status_widget_description">See status of your full node.</string>
+    <string name="mempool_status_widget_label">Mempool Status</string>
+    <string name="mempool_status_widget_description">See status of mempool.space Bitcoin explorer.</string>
+    <string name="combined_status_widget_label">Combined Status</string>
+    <string name="combined_status_widget_description">See status of your full node and mempool.space Bitcoin explorer.</string>
+    <string name="configuration_host_hint">Host</string>
+    <string name="configuration_port_hint">Port</string>
+    <string name="configuration_port_default">8333</string>
+    <string name="configuration_confirm_button_text">Confirm</string>
+    <string name="bitcoin_description">Bitcoin</string>
+    <string name="block_height">740597</string>
+    <string name="node_status_user_agent">/Satoshi:22.99.0/</string>
+    <string name="node_status_protocol_version">70016</string>
+    <string name="mempool_status_hour_fee">1</string>
+    <string name="mempool_status_half_hour_fee">3</string>
+    <string name="mempool_status_fastest_fee">7</string>
+    <string name="mempool_status_fee_separator">/</string>
+    <string name="mempool_status_minimum">minimum</string>
+    <string name="mempool_status_minimum_fee">1</string>
+    <string name="node_unreachable">Node unreachable</string>
+</resources>

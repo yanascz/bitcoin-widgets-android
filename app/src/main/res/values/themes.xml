@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.BitcoinWidgets" parent="Theme.MaterialComponents">
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryVariant">@color/dark_orange</item>
+        <item name="colorSecondary">@color/orange</item>
+    </style>
+
+</resources>

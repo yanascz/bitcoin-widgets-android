@@ -1,0 +1,216 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AppMainActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:shrinkColumns="1">
+
+        <TableRow>
+
+            <TextView
+                style="@style/BitcoinWidgets.Title"
+                android:layout_marginTop="0dp"
+                android:text="@string/app_add_widget_title" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                style="@style/BitcoinWidgets.ListIcon"
+                android:contentDescription="1"
+                android:src="@drawable/ic_round_looks_1"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                style="@style/BitcoinWidgets.ListItem"
+                android:text="@string/app_add_widget_item_1" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                style="@style/BitcoinWidgets.ListIcon"
+                android:contentDescription="2"
+                android:src="@drawable/ic_round_looks_2"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                style="@style/BitcoinWidgets.ListItem"
+                android:text="@string/app_add_widget_item_2" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                style="@style/BitcoinWidgets.ListIcon"
+                android:contentDescription="3"
+                android:src="@drawable/ic_round_looks_3"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                style="@style/BitcoinWidgets.ListItem"
+                android:text="@string/app_add_widget_item_3" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                style="@style/BitcoinWidgets.ListIcon"
+                android:contentDescription="4"
+                android:src="@drawable/ic_round_looks_4"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                style="@style/BitcoinWidgets.ListItem"
+                android:text="@string/app_add_widget_item_4" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                style="@style/BitcoinWidgets.ListIcon"
+                android:contentDescription="5"
+                android:src="@drawable/ic_round_looks_5"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                style="@style/BitcoinWidgets.ListItem"
+                android:text="@string/app_add_widget_item_5" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                style="@style/BitcoinWidgets.Title"
+                android:text="@string/app_resize_widget_title" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                style="@style/BitcoinWidgets.ListIcon"
+                android:contentDescription="1"
+                android:src="@drawable/ic_round_looks_1"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                style="@style/BitcoinWidgets.ListItem"
+                android:text="@string/app_resize_widget_item_1" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                style="@style/BitcoinWidgets.ListIcon"
+                android:contentDescription="2"
+                android:src="@drawable/ic_round_looks_2"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                style="@style/BitcoinWidgets.ListItem"
+                android:text="@string/app_resize_widget_item_2" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                style="@style/BitcoinWidgets.ListIcon"
+                android:contentDescription="3"
+                android:src="@drawable/ic_round_looks_3"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                style="@style/BitcoinWidgets.ListItem"
+                android:text="@string/app_resize_widget_item_3" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                style="@style/BitcoinWidgets.ListIcon"
+                android:contentDescription="4"
+                android:src="@drawable/ic_round_looks_4"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                style="@style/BitcoinWidgets.ListItem"
+                android:text="@string/app_resize_widget_item_4" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                style="@style/BitcoinWidgets.Title"
+                android:text="@string/app_find_out_more_title" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                style="@style/BitcoinWidgets.ListIcon"
+                android:contentDescription="@string/app_find_out_more_code_icon"
+                android:src="@drawable/ic_round_code" />
+
+            <TextView
+                android:id="@+id/source_code"
+                style="@style/BitcoinWidgets.ListItem"
+                android:text="@string/app_find_out_more_source_code" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                style="@style/BitcoinWidgets.ListIcon"
+                android:contentDescription="@string/app_find_out_more_bug_icon"
+                android:src="@drawable/ic_round_bug_report" />
+
+            <TextView
+                android:id="@+id/issue_tracking"
+                style="@style/BitcoinWidgets.ListItem"
+                android:text="@string/app_find_out_more_issue_tracking" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                style="@style/BitcoinWidgets.Title"
+                android:text="@string/app_support_title" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                style="@style/BitcoinWidgets.ListIcon"
+                android:contentDescription="@string/app_support_lightning_icon"
+                android:src="@drawable/ic_round_bolt" />
+
+            <TextView
+                android:id="@+id/lightning_address"
+                style="@style/BitcoinWidgets.ListItem"
+                android:text="@string/app_support_lightning_address" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</ScrollView>
