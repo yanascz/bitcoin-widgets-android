@@ -17,6 +17,8 @@
     <string name="app_find_out_more_source_code"><a href="https://github.com/yanascz/bitcoin-widgets-android">Source code</a></string>
     <string name="app_find_out_more_bug_icon">bug</string>
     <string name="app_find_out_more_issue_tracking"><a href="https://github.com/yanascz/bitcoin-widgets-android/issues">Issue tracking</a></string>
+    <string name="app_find_out_more_privacy_icon">bug</string>
+    <string name="app_find_out_more_privacy_policy"><a href="https://widgets.yanas.cz/privacy-policy.html">Privacy policy</a></string>
     <string name="app_support_title">Support</string>
     <string name="app_support_lightning_icon">lightning</string>
     <string name="app_support_lightning_address"><a href="lightning:widgets@ln.yanas.cz">widgets@ln.yanas.cz</a></string>

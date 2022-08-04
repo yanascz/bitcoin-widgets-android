@@ -191,6 +191,20 @@
 
         <TableRow>
 
+            <ImageView
+                style="@style/BitcoinWidgets.ListIcon"
+                android:contentDescription="@string/app_find_out_more_privacy_icon"
+                android:src="@drawable/ic_round_lock" />
+
+            <TextView
+                android:id="@+id/privacy_policy"
+                style="@style/BitcoinWidgets.ListItem"
+                android:text="@string/app_find_out_more_privacy_policy" />
+
+        </TableRow>
+
+        <TableRow>
+
             <TextView
                 style="@style/BitcoinWidgets.Title"
                 android:text="@string/app_support_title" />
