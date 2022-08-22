@@ -16,7 +16,10 @@ Provide host and port of your full node in widget configuration.
 * Public nodes are accessed directly via the [Bitcoin protocol](https://en.bitcoin.it/wiki/Protocol_documentation).
 * Nodes running as Tor hidden services are accessed via the [Bitnodes API](https://bitnodes.io/api/).
 
-If your node runs behind NAT, consider setting up a [reverse SSH tunnel](https://github.com/yanascz/bitcoind-tunnel). 
+If your node runs behind NAT, consider setting up a [reverse SSH tunnel](https://github.com/yanascz/bitcoind-tunnel).
+
+Due to Android power restrictions, installed widgets are updated only once every 30 minutes.
+If you want the widgets to be updated when screen is turned on, keep the app running in the background.
 
 ## Support
 

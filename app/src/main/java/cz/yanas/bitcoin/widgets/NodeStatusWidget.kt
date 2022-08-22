@@ -2,7 +2,10 @@ package cz.yanas.bitcoin.widgets
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
+import android.content.BroadcastReceiver
+import android.content.ComponentName
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.widget.RemoteViews
 import kotlinx.coroutines.CoroutineScope
@@ -12,11 +15,7 @@ import kotlinx.coroutines.launch
 class NodeStatusWidget : AppWidgetProvider() {
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
-        CoroutineScope(Dispatchers.IO).launch {
-            for (appWidgetId in appWidgetIds) {
-                doUpdate(context, appWidgetManager, appWidgetId)
-            }
-        }
+        doUpdate(context, appWidgetManager, appWidgetIds)
     }
 
     override fun onDeleted(context: Context, appWidgetIds: IntArray) {
@@ -26,6 +25,14 @@ class NodeStatusWidget : AppWidgetProvider() {
     }
 
     internal companion object {
+
+        fun doUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
+            CoroutineScope(Dispatchers.IO).launch {
+                for (appWidgetId in appWidgetIds) {
+                    doUpdate(context, appWidgetManager, appWidgetId)
+                }
+            }
+        }
 
         fun doUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int) {
             val configuration = NodeConfigurationRepository.getConfiguration(context, appWidgetId) ?: return
@@ -54,6 +61,18 @@ class NodeStatusWidget : AppWidgetProvider() {
             CoroutineScope(Dispatchers.IO).launch {
                 doUpdate(context, appWidgetManager, appWidgetId)
             }
+        }
+
+    }
+
+    class UpdateReceiver : BroadcastReceiver() {
+
+        override fun onReceive(context: Context, intent: Intent) {
+            val appWidgetManager = AppWidgetManager.getInstance(context)
+            val nodeStatusWidgetName = ComponentName(context, NodeStatusWidget::class.java)
+            val appWidgetIds = appWidgetManager.getAppWidgetIds(nodeStatusWidgetName)
+
+            doUpdate(context, appWidgetManager, appWidgetIds)
         }
 
     }

@@ -1,5 +1,7 @@
 package cz.yanas.bitcoin.widgets
 
+import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.widget.TextView
@@ -14,6 +16,11 @@ class AppMainActivity : AppCompatActivity() {
         for (viewId in listOf(R.id.source_code, R.id.issue_tracking, R.id.lightning_address)) {
             findViewById<TextView>(viewId).movementMethod = LinkMovementMethod.getInstance()
         }
+
+        val intentFilter = IntentFilter(Intent.ACTION_USER_PRESENT)
+        registerReceiver(NodeStatusWidget.UpdateReceiver(), intentFilter)
+        registerReceiver(MempoolStatusWidget.UpdateReceiver(), intentFilter)
+        registerReceiver(CombinedStatusWidget.UpdateReceiver(), intentFilter)
     }
 
 }

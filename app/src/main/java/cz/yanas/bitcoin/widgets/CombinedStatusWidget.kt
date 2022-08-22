@@ -2,7 +2,10 @@ package cz.yanas.bitcoin.widgets
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
+import android.content.BroadcastReceiver
+import android.content.ComponentName
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.widget.RemoteViews
 import kotlinx.coroutines.CoroutineScope
@@ -12,12 +15,7 @@ import kotlinx.coroutines.launch
 class CombinedStatusWidget : AppWidgetProvider() {
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
-        CoroutineScope(Dispatchers.IO).launch {
-            val mempoolStatus = MempoolStatusProvider.getMempoolStatus()
-            for (appWidgetId in appWidgetIds) {
-                doUpdate(context, appWidgetManager, appWidgetId, mempoolStatus)
-            }
-        }
+        doUpdate(context, appWidgetManager, appWidgetIds)
     }
 
     override fun onDeleted(context: Context, appWidgetIds: IntArray) {
@@ -27,6 +25,15 @@ class CombinedStatusWidget : AppWidgetProvider() {
     }
 
     internal companion object {
+
+        fun doUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
+            CoroutineScope(Dispatchers.IO).launch {
+                val mempoolStatus = MempoolStatusProvider.getMempoolStatus()
+                for (appWidgetId in appWidgetIds) {
+                    doUpdate(context, appWidgetManager, appWidgetId, mempoolStatus)
+                }
+            }
+        }
 
         fun doUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int, mempoolStatus: MempoolStatus) {
             val configuration = NodeConfigurationRepository.getConfiguration(context, appWidgetId) ?: return
@@ -60,6 +67,18 @@ class CombinedStatusWidget : AppWidgetProvider() {
                 val mempoolStatus = MempoolStatusProvider.getMempoolStatus()
                 doUpdate(context, appWidgetManager, appWidgetId, mempoolStatus)
             }
+        }
+
+    }
+
+    class UpdateReceiver : BroadcastReceiver() {
+
+        override fun onReceive(context: Context, intent: Intent) {
+            val appWidgetManager = AppWidgetManager.getInstance(context)
+            val combinedStatusWidgetName = ComponentName(context, CombinedStatusWidget::class.java)
+            val appWidgetIds = appWidgetManager.getAppWidgetIds(combinedStatusWidgetName)
+
+            doUpdate(context, appWidgetManager, appWidgetIds)
         }
 
     }
