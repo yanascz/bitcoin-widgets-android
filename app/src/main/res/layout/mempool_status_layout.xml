@@ -22,6 +22,16 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/mempool_status_economy_fee"
+                style="@style/BitcoinWidgets.Widget.Fee"
+                android:text="@string/mempool_status_economy_fee" />
+
+            <TextView
+                style="@style/BitcoinWidgets.Widget.FootNote"
+                android:layout_marginHorizontal="7dp"
+                android:text="@string/mempool_status_fee_separator" />
+
+            <TextView
                 android:id="@+id/mempool_status_hour_fee"
                 style="@style/BitcoinWidgets.Widget.Fee"
                 android:text="@string/mempool_status_hour_fee" />

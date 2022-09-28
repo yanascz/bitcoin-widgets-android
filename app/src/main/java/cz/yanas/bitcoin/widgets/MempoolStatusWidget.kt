@@ -34,6 +34,7 @@ class MempoolStatusWidget : AppWidgetProvider() {
             views.setTextViewText(R.id.mempool_status_fastest_fee, mempoolStatus.fastestFee.toString())
             views.setTextViewText(R.id.mempool_status_half_hour_fee, mempoolStatus.halfHourFee.toString())
             views.setTextViewText(R.id.mempool_status_hour_fee, mempoolStatus.hourFee.toString())
+            views.setTextViewText(R.id.mempool_status_economy_fee, mempoolStatus.economyFee.toString())
             views.setTextViewText(R.id.mempool_status_minimum_fee, mempoolStatus.minimumFee.toString())
 
             appWidgetManager.updateAppWidget(appWidgetId, views)

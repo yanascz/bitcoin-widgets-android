@@ -15,6 +15,7 @@ object MempoolStatusProvider {
             fastestFee = recommendedFees.fastestFee,
             halfHourFee = recommendedFees.halfHourFee,
             hourFee = recommendedFees.hourFee,
+            economyFee = recommendedFees.economyFee,
             minimumFee = recommendedFees.minimumFee
         )
     }

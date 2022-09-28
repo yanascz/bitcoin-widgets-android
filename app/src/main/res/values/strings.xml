@@ -36,9 +36,10 @@
     <string name="block_height">740597</string>
     <string name="node_status_user_agent">/Satoshi:22.99.0/</string>
     <string name="node_status_protocol_version">70016</string>
-    <string name="mempool_status_hour_fee">1</string>
-    <string name="mempool_status_half_hour_fee">3</string>
-    <string name="mempool_status_fastest_fee">7</string>
+    <string name="mempool_status_economy_fee">1</string>
+    <string name="mempool_status_hour_fee">3</string>
+    <string name="mempool_status_half_hour_fee">8</string>
+    <string name="mempool_status_fastest_fee">17</string>
     <string name="mempool_status_fee_separator">/</string>
     <string name="mempool_status_minimum">minimum</string>
     <string name="mempool_status_minimum_fee">1</string>

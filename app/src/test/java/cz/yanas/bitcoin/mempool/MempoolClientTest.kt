@@ -10,7 +10,7 @@ class MempoolClientTest {
         val client = MempoolClient()
         val blockHeight = client.getBlockHeight()
 
-        assertThat(blockHeight).isGreaterThanOrEqualTo(740597)
+        assertThat(blockHeight).isGreaterThanOrEqualTo(755465)
     }
 
     @Test
@@ -21,6 +21,7 @@ class MempoolClientTest {
         assertThat(recommendedFees.fastestFee).isPositive()
         assertThat(recommendedFees.halfHourFee).isPositive()
         assertThat(recommendedFees.hourFee).isPositive()
+        assertThat(recommendedFees.economyFee).isPositive()
         assertThat(recommendedFees.minimumFee).isPositive()
     }
 
