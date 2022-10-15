@@ -21,7 +21,7 @@
     <string name="app_find_out_more_privacy_policy"><a href="https://widgets.yanas.cz/privacy-policy.html">Privacy policy</a></string>
     <string name="app_support_title">Support</string>
     <string name="app_support_lightning_icon">lightning</string>
-    <string name="app_support_lightning_address"><a href="lightning:widgets@ln.yanas.cz">widgets@ln.yanas.cz</a></string>
+    <string name="app_support_lightning_address"><a href="lightning:widgets@yanas.cz">widgets@yanas.cz</a></string>
     <string name="node_status_widget_label">Node Status</string>
     <string name="node_status_widget_description">See status of your full node.</string>
     <string name="mempool_status_widget_label">Mempool Status</string>

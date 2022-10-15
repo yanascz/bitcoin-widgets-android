@@ -23,5 +23,5 @@ If you want the widgets to be updated when screen is turned on, keep the app run
 
 ## Support
 
-If you find Bitcoin Widgets useful, please consider supporting its maintenance by sending some sats to ⚡widgets@ln.yanas.cz.
+If you find Bitcoin Widgets useful, please consider supporting its maintenance by sending some sats to ⚡widgets@yanas.cz.
 
