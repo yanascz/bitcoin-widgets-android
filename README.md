@@ -1,6 +1,6 @@
 # Bitcoin Widgets
 
-![Bitcoin Widgets](https://repository-images.githubusercontent.com/503792690/5e895813-b18a-47f4-b99d-ccc9a722534a)
+![Bitcoin Widgets](https://repository-images.githubusercontent.com/516121902/9934abe6-4a5b-491b-bf19-2ef33d467ee3)
 
 See status of your [full node](https://bitcoin.org/en/full-node) and/or [mempool.space](https://mempool.space) Bitcoin explorer on your Android device.
 
