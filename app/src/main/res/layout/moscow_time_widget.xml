@@ -1,0 +1,58 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BitcoinWidgets.Widget"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        style="@style/BitcoinWidgets.Widget.Bitcoin"
+        android:contentDescription="@string/bitcoin_description" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="11dp"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/moscow_time_primary"
+                style="@style/BitcoinWidgets.Widget.MoscowTime"
+                android:text="@string/moscow_time_primary" />
+
+            <TextView
+                android:id="@+id/moscow_time_primary_price"
+                style="@style/BitcoinWidgets.Widget.FootNote"
+                android:layout_marginEnd="1dp"
+                android:text="@string/moscow_time_primary_price" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="11dp"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/moscow_time_secondary"
+                style="@style/BitcoinWidgets.Widget.MoscowTime"
+                android:text="@string/moscow_time_secondary" />
+
+            <TextView
+                android:id="@+id/moscow_time_secondary_price"
+                style="@style/BitcoinWidgets.Widget.FootNote"
+                android:layout_marginEnd="1dp"
+                android:text="@string/moscow_time_secondary_price" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

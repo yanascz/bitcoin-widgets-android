@@ -28,6 +28,8 @@
     <string name="mempool_status_widget_description">See status of mempool.space Bitcoin explorer.</string>
     <string name="combined_status_widget_label">Combined Status</string>
     <string name="combined_status_widget_description">See status of your full node and mempool.space Bitcoin explorer.</string>
+    <string name="moscow_time_widget_label">Moscow Time</string>
+    <string name="moscow_time_widget_description">See current Moscow Time for selected currencies.</string>
     <string name="configuration_host_hint">Host</string>
     <string name="configuration_port_hint">Port</string>
     <string name="configuration_port_default">8333</string>
@@ -43,5 +45,9 @@
     <string name="mempool_status_fee_separator">/</string>
     <string name="mempool_status_minimum">minimum</string>
     <string name="mempool_status_minimum_fee">1</string>
+    <string name="moscow_time_primary">1952</string>
+    <string name="moscow_time_primary_price">$51,230</string>
+    <string name="moscow_time_secondary">2296</string>
+    <string name="moscow_time_secondary_price">€43,546</string>
     <string name="node_unreachable">Node unreachable</string>
 </resources>

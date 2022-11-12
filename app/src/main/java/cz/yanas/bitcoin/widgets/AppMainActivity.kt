@@ -21,6 +21,7 @@ class AppMainActivity : AppCompatActivity() {
         registerReceiver(NodeStatusWidget.UpdateReceiver(), intentFilter)
         registerReceiver(MempoolStatusWidget.UpdateReceiver(), intentFilter)
         registerReceiver(CombinedStatusWidget.UpdateReceiver(), intentFilter)
+        registerReceiver(MoscowTimeWidget.UpdateReceiver(), intentFilter)
     }
 
 }
