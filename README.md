@@ -1,12 +1,12 @@
 # Bitcoin Widgets
 
-![Bitcoin Widgets](https://repository-images.githubusercontent.com/516121902/9934abe6-4a5b-491b-bf19-2ef33d467ee3)
+![Bitcoin Widgets](https://repository-images.githubusercontent.com/516121902/7b13c221-db4b-42bc-9cc7-e45216f241d4)
 
 See status of your [full node](https://bitcoin.org/en/full-node) and/or [mempool.space](https://mempool.space) Bitcoin explorer on your Android device.
 
 ## Installation
 
-* Download Bitcoin Widgets from the Google Play Store.
+* Download [Bitcoin Widgets](https://play.google.com/store/apps/details?id=cz.yanas.bitcoin.widgets) from the Google Play Store.
 * Clone the repository and install the app manually via Android Studio.
 
 ## Configuration
