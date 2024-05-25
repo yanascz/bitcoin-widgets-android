@@ -7,6 +7,7 @@ See status of your [full node](https://bitcoin.org/en/full-node) and/or [mempool
 ## Installation
 
 * Download [Bitcoin Widgets](https://play.google.com/store/apps/details?id=cz.yanas.bitcoin.widgets) from the Google Play Store.
+* Download [Bitcoin Widgets APK](https://bitcoinwidgets.app/bitcoin-widgets-v1.2.1-universal.apk) directly from the project website. 
 * Clone the repository and install the app manually via Android Studio.
 
 ## Configuration
