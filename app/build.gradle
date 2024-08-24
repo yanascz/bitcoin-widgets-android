@@ -27,11 +27,14 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     packagingOptions {
-        exclude 'META-INF/DEPENDENCIES'
+        resources {
+            excludes += ['META-INF/DEPENDENCIES']
+        }
     }
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    namespace 'cz.yanas.bitcoin.widgets'
 }
 
 dependencies {
