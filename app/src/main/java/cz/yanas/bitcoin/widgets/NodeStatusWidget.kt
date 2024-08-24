@@ -11,6 +11,7 @@ import android.widget.RemoteViews
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlin.random.Random
 
 class NodeStatusWidget : AppWidgetProvider() {
 
@@ -36,6 +37,8 @@ class NodeStatusWidget : AppWidgetProvider() {
 
         fun doUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int) {
             val configuration = NodeConfigurationRepository.getConfiguration(context, appWidgetId) ?: return
+            val updateIntent = WidgetUtils.getUpdateIntent(context, NodeStatusWidget::class, appWidgetId)
+
             var views: RemoteViews
 
             try {
@@ -45,9 +48,11 @@ class NodeStatusWidget : AppWidgetProvider() {
                 views.setTextViewText(R.id.node_status_block_height, nodeStatus.blockHeight.toString())
                 views.setTextViewText(R.id.node_status_user_agent, nodeStatus.userAgent)
                 views.setTextViewText(R.id.node_status_protocol_version, nodeStatus.protocolVersion.toString())
+                views.setOnClickPendingIntent(R.id.node_status_refresh, updateIntent)
             } catch (throwable: Throwable) {
                 Log.e("NodeStatusWidget", "Node status not available", throwable)
                 views = RemoteViews(context.packageName, R.layout.widget_error)
+                views.setOnClickPendingIntent(R.id.widget_error_refresh, updateIntent)
             }
 
             appWidgetManager.updateAppWidget(appWidgetId, views)

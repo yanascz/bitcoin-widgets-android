@@ -37,6 +37,8 @@ class CombinedStatusWidget : AppWidgetProvider() {
 
         fun doUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int, mempoolStatus: MempoolStatus) {
             val configuration = NodeConfigurationRepository.getConfiguration(context, appWidgetId) ?: return
+            val updateIntent = WidgetUtils.getUpdateIntent(context, CombinedStatusWidget::class, appWidgetId)
+
             var views: RemoteViews
 
             try {
@@ -52,9 +54,12 @@ class CombinedStatusWidget : AppWidgetProvider() {
                 views.setTextViewText(R.id.mempool_status_hour_fee, mempoolStatus.hourFee.toString())
                 views.setTextViewText(R.id.mempool_status_economy_fee, mempoolStatus.economyFee.toString())
                 views.setTextViewText(R.id.mempool_status_minimum_fee, mempoolStatus.minimumFee.toString())
+                views.setOnClickPendingIntent(R.id.node_status_refresh, updateIntent)
+                views.setOnClickPendingIntent(R.id.mempool_status_refresh, updateIntent)
             } catch (throwable: Throwable) {
                 Log.e("CombinedStatusWidget", "Node status not available", throwable)
                 views = RemoteViews(context.packageName, R.layout.widget_error)
+                views.setOnClickPendingIntent(R.id.widget_error_refresh, updateIntent)
             }
 
             appWidgetManager.updateAppWidget(appWidgetId, views)

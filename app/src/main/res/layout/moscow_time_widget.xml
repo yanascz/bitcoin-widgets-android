@@ -8,6 +8,7 @@
         android:contentDescription="@string/bitcoin_description" />
 
     <LinearLayout
+        android:id="@+id/moscow_time_refresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

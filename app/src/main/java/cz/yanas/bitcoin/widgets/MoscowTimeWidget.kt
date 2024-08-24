@@ -31,11 +31,14 @@ class MoscowTimeWidget : AppWidgetProvider() {
         }
 
         private fun doUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int, moscowTime: MoscowTime) {
+            val updateIntent = WidgetUtils.getUpdateIntent(context, MoscowTimeWidget::class, appWidgetId)
+
             val views = RemoteViews(context.packageName, R.layout.moscow_time_widget)
             views.setTextViewText(R.id.moscow_time_primary, time(moscowTime.primaryPrice))
             views.setTextViewText(R.id.moscow_time_primary_price, price(moscowTime.primaryPrice, moscowTime.primaryCurrencyCode))
             views.setTextViewText(R.id.moscow_time_secondary, time(moscowTime.secondaryPrice))
             views.setTextViewText(R.id.moscow_time_secondary_price, price(moscowTime.secondaryPrice, moscowTime.secondaryCurrencyCode))
+            views.setOnClickPendingIntent(R.id.moscow_time_refresh, updateIntent)
 
             appWidgetManager.updateAppWidget(appWidgetId, views)
         }

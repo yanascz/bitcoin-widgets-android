@@ -12,7 +12,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MempoolStatusWidget : AppWidgetProvider() {
-
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         doUpdate(context, appWidgetManager, appWidgetIds)
     }
@@ -29,6 +28,8 @@ class MempoolStatusWidget : AppWidgetProvider() {
         }
 
         private fun doUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int, mempoolStatus: MempoolStatus) {
+            val updateIntent = WidgetUtils.getUpdateIntent(context, MempoolStatusWidget::class, appWidgetId)
+
             val views = RemoteViews(context.packageName, R.layout.mempool_status_widget)
             views.setTextViewText(R.id.mempool_status_block_height, mempoolStatus.blockHeight.toString())
             views.setTextViewText(R.id.mempool_status_fastest_fee, mempoolStatus.fastestFee.toString())
@@ -36,6 +37,7 @@ class MempoolStatusWidget : AppWidgetProvider() {
             views.setTextViewText(R.id.mempool_status_hour_fee, mempoolStatus.hourFee.toString())
             views.setTextViewText(R.id.mempool_status_economy_fee, mempoolStatus.economyFee.toString())
             views.setTextViewText(R.id.mempool_status_minimum_fee, mempoolStatus.minimumFee.toString())
+            views.setOnClickPendingIntent(R.id.mempool_status_refresh, updateIntent)
 
             appWidgetManager.updateAppWidget(appWidgetId, views)
         }

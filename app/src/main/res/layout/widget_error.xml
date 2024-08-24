@@ -8,6 +8,7 @@
         android:contentDescription="@string/bitcoin_description" />
 
     <TextView
+        android:id="@+id/widget_error_refresh"
         style="@style/BitcoinWidgets.Widget.Error"
         android:layout_gravity="center"
         android:text="@string/node_unreachable" />
