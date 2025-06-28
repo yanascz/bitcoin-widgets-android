@@ -30,15 +30,22 @@ class MoscowTimeWidget : AppWidgetProvider() {
             }
         }
 
-        private fun doUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int, moscowTime: MoscowTime) {
+        private fun doUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int, moscowTime: MoscowTime?) {
             val updateIntent = WidgetUtils.getUpdateIntent(context, MoscowTimeWidget::class, appWidgetId)
 
-            val views = RemoteViews(context.packageName, R.layout.moscow_time_widget)
-            views.setTextViewText(R.id.moscow_time_primary, time(moscowTime.primaryPrice))
-            views.setTextViewText(R.id.moscow_time_primary_price, price(moscowTime.primaryPrice, moscowTime.primaryCurrencyCode))
-            views.setTextViewText(R.id.moscow_time_secondary, time(moscowTime.secondaryPrice))
-            views.setTextViewText(R.id.moscow_time_secondary_price, price(moscowTime.secondaryPrice, moscowTime.secondaryCurrencyCode))
-            views.setOnClickPendingIntent(R.id.moscow_time_refresh, updateIntent)
+            val views: RemoteViews
+            if (moscowTime != null) {
+                views = RemoteViews(context.packageName, R.layout.moscow_time_widget)
+                views.setTextViewText(R.id.moscow_time_primary, time(moscowTime.primaryPrice))
+                views.setTextViewText(R.id.moscow_time_primary_price, price(moscowTime.primaryPrice, moscowTime.primaryCurrencyCode))
+                views.setTextViewText(R.id.moscow_time_secondary, time(moscowTime.secondaryPrice))
+                views.setTextViewText(R.id.moscow_time_secondary_price, price(moscowTime.secondaryPrice, moscowTime.secondaryCurrencyCode))
+                views.setOnClickPendingIntent(R.id.moscow_time_refresh, updateIntent)
+            } else {
+                views = RemoteViews(context.packageName, R.layout.widget_error)
+                views.setTextViewText(R.id.widget_error_message, context.getString(R.string.service_unreachable))
+                views.setOnClickPendingIntent(R.id.widget_error_refresh, updateIntent)
+            }
 
             appWidgetManager.updateAppWidget(appWidgetId, views)
         }

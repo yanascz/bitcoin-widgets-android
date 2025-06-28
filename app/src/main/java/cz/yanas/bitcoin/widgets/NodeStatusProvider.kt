@@ -1,5 +1,6 @@
 package cz.yanas.bitcoin.widgets
 
+import android.util.Log
 import cz.yanas.bitcoin.bitnodes.BitnodesClient
 import cz.yanas.bitcoin.client.BitcoinClient
 
@@ -7,7 +8,16 @@ object NodeStatusProvider {
 
     private val bitnodesClient = BitnodesClient()
 
-    fun getNodeStatus(configuration: NodeConfiguration): NodeStatus {
+    fun getNodeStatus(configuration: NodeConfiguration): NodeStatus? {
+        try {
+            return doGetNodeStatus(configuration)
+        } catch (throwable: Throwable) {
+            Log.e("NodeStatusProvider", "Node status not available", throwable)
+            return null
+        }
+    }
+
+    private fun doGetNodeStatus(configuration: NodeConfiguration): NodeStatus {
         if (configuration.host.endsWith(".onion")) {
             val cachedStatus = bitnodesClient.getNodeStatus(configuration.host, configuration.port)
             val currentStatus = bitnodesClient.checkNode(configuration.host, configuration.port)

@@ -27,17 +27,24 @@ class MempoolStatusWidget : AppWidgetProvider() {
             }
         }
 
-        private fun doUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int, mempoolStatus: MempoolStatus) {
+        private fun doUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int, mempoolStatus: MempoolStatus?) {
             val updateIntent = WidgetUtils.getUpdateIntent(context, MempoolStatusWidget::class, appWidgetId)
 
-            val views = RemoteViews(context.packageName, R.layout.mempool_status_widget)
-            views.setTextViewText(R.id.mempool_status_block_height, mempoolStatus.blockHeight.toString())
-            views.setTextViewText(R.id.mempool_status_fastest_fee, mempoolStatus.fastestFee.toString())
-            views.setTextViewText(R.id.mempool_status_half_hour_fee, mempoolStatus.halfHourFee.toString())
-            views.setTextViewText(R.id.mempool_status_hour_fee, mempoolStatus.hourFee.toString())
-            views.setTextViewText(R.id.mempool_status_economy_fee, mempoolStatus.economyFee.toString())
-            views.setTextViewText(R.id.mempool_status_minimum_fee, mempoolStatus.minimumFee.toString())
-            views.setOnClickPendingIntent(R.id.mempool_status_refresh, updateIntent)
+            val views: RemoteViews
+            if (mempoolStatus != null) {
+                views = RemoteViews(context.packageName, R.layout.mempool_status_widget)
+                views.setTextViewText(R.id.mempool_status_block_height, mempoolStatus.blockHeight.toString())
+                views.setTextViewText(R.id.mempool_status_fastest_fee, mempoolStatus.fastestFee.toString())
+                views.setTextViewText(R.id.mempool_status_half_hour_fee, mempoolStatus.halfHourFee.toString())
+                views.setTextViewText(R.id.mempool_status_hour_fee, mempoolStatus.hourFee.toString())
+                views.setTextViewText(R.id.mempool_status_economy_fee, mempoolStatus.economyFee.toString())
+                views.setTextViewText(R.id.mempool_status_minimum_fee, mempoolStatus.minimumFee.toString())
+                views.setOnClickPendingIntent(R.id.mempool_status_refresh, updateIntent)
+            } else {
+                views = RemoteViews(context.packageName, R.layout.widget_error)
+                views.setTextViewText(R.id.widget_error_message, context.getString(R.string.service_unreachable))
+                views.setOnClickPendingIntent(R.id.widget_error_refresh, updateIntent)
+            }
 
             appWidgetManager.updateAppWidget(appWidgetId, views)
         }

@@ -6,7 +6,6 @@ import android.content.BroadcastReceiver
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.widget.RemoteViews
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -35,15 +34,13 @@ class CombinedStatusWidget : AppWidgetProvider() {
             }
         }
 
-        fun doUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int, mempoolStatus: MempoolStatus) {
+        fun doUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int, mempoolStatus: MempoolStatus?) {
             val configuration = NodeConfigurationRepository.getConfiguration(context, appWidgetId) ?: return
             val updateIntent = WidgetUtils.getUpdateIntent(context, CombinedStatusWidget::class, appWidgetId)
+            val nodeStatus = NodeStatusProvider.getNodeStatus(configuration)
 
-            var views: RemoteViews
-
-            try {
-                val nodeStatus = NodeStatusProvider.getNodeStatus(configuration)
-
+            val views: RemoteViews
+            if (nodeStatus != null && mempoolStatus != null) {
                 views = RemoteViews(context.packageName, R.layout.combined_status_widget)
                 views.setTextViewText(R.id.node_status_block_height, nodeStatus.blockHeight.toString())
                 views.setTextViewText(R.id.node_status_user_agent, nodeStatus.userAgent)
@@ -56,9 +53,9 @@ class CombinedStatusWidget : AppWidgetProvider() {
                 views.setTextViewText(R.id.mempool_status_minimum_fee, mempoolStatus.minimumFee.toString())
                 views.setOnClickPendingIntent(R.id.node_status_refresh, updateIntent)
                 views.setOnClickPendingIntent(R.id.mempool_status_refresh, updateIntent)
-            } catch (throwable: Throwable) {
-                Log.e("CombinedStatusWidget", "Node status not available", throwable)
+            } else {
                 views = RemoteViews(context.packageName, R.layout.widget_error)
+                views.setTextViewText(R.id.widget_error_message, context.getString(R.string.node_unreachable))
                 views.setOnClickPendingIntent(R.id.widget_error_refresh, updateIntent)
             }
 

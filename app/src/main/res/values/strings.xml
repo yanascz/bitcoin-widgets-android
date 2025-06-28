@@ -50,4 +50,5 @@
     <string name="moscow_time_secondary">2296</string>
     <string name="moscow_time_secondary_price">€43,546</string>
     <string name="node_unreachable">Node unreachable</string>
+    <string name="service_unreachable">Service unreachable</string>
 </resources>
